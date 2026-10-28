@@ -1,0 +1,95 @@
+/* ---------- P01-S01 · Первый экран ---------- */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: calc(var(--header-height) + var(--space-7)) var(--space-7);
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: var(--column-gap);
+  align-items: center;
+}
+
+.hero__text {
+  grid-column: 1 / span 5;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__title {
+  margin-bottom: var(--space-5);
+}
+
+.hero__lead {
+  margin-bottom: var(--space-6);
+}
+
+.hero__media {
+  grid-column: 6 / span 7;
+  position: relative;
+  justify-self: end;
+  width: fit-content;
+}
+
+.hero__image {
+  width: auto;
+  max-height: min(80svh, 820px);
+}
+
+.hero__tag {
+  position: absolute;
+  left: 0;
+  bottom: var(--space-4);
+}
+
+@media (max-width: 879.98px) {
+  .hero {
+    padding-block: calc(var(--header-height) + var(--space-5)) var(--space-6);
+  }
+
+  .hero__grid {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "title"
+      "media"
+      "lead"
+      "action";
+  }
+
+  /* На узком экране торт встаёт между заголовком и пояснением */
+  .hero__text {
+    display: contents;
+  }
+
+  .hero__title {
+    grid-area: title;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__media {
+    grid-area: media;
+    grid-column: auto;
+    justify-self: center;
+    margin-bottom: var(--space-4);
+  }
+
+  .hero__image {
+    max-height: 40svh;
+  }
+
+  .hero__lead {
+    grid-area: lead;
+    margin-bottom: var(--space-5);
+  }
+
+  .hero__action {
+    grid-area: action;
+    width: 100%;
+  }
+}

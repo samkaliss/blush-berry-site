@@ -1,0 +1,158 @@
+/* ---------- Кнопки ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: var(--control-height);
+  padding: var(--space-4) 28px;
+  border: var(--border-control) solid transparent;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-size: var(--text-button);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-ui) ease,
+    border-color var(--duration-ui) ease,
+    transform var(--duration-press) ease;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn__icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: var(--color-on-accent);
+}
+
+.btn--primary:hover,
+.btn--primary:active {
+  background: var(--color-accent-hover);
+}
+
+.btn--secondary {
+  background: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+}
+
+.btn--secondary:hover,
+.btn--secondary:active {
+  background: var(--color-blush);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* ---------- Верхняя панель ---------- */
+
+.site-header {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 20;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background-color var(--duration-ui) ease,
+    border-color var(--duration-ui) ease;
+}
+
+.site-header.is-scrolled {
+  background: var(--color-bg);
+  border-bottom-color: var(--color-border);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  min-height: var(--header-height);
+}
+
+.site-header__brand {
+  font-family: var(--font-display);
+  font-size: var(--text-brand);
+  font-weight: 600;
+  line-height: 1;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.btn__label-short {
+  display: none;
+}
+
+@media (max-width: 879.98px) {
+  .site-header .btn__label-long {
+    display: none;
+  }
+  .site-header .btn__label-short {
+    display: inline;
+  }
+}
+
+/* ---------- Закреплённая кнопка «Собрать торт» (только телефон) ---------- */
+
+.sticky-cta {
+  display: none;
+}
+
+@media (max-width: 879.98px) {
+  .sticky-cta {
+    display: block;
+    position: fixed;
+    inset: auto 0 0 0;
+    z-index: 15;
+    padding: var(--space-4) var(--gutter) calc(var(--space-4) + env(safe-area-inset-bottom));
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(12px);
+    visibility: hidden;
+    transition:
+      opacity var(--duration-ui) var(--ease-out),
+      transform var(--duration-ui) var(--ease-out),
+      visibility 0s linear var(--duration-ui);
+  }
+
+  .sticky-cta.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+    transform: none;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+
+  .sticky-cta .btn {
+    width: 100%;
+    box-shadow: var(--shadow-float);
+  }
+}
+
+/* ---------- Метка «пример» ---------- */
+
+.tag-example {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  font-size: var(--text-tag);
+  font-weight: 600;
+  line-height: var(--leading-tight);
+}

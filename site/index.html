@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Blush-Berry — авторские торты на заказ</title>
+  <meta name="description" content="Соберите свой торт и сразу узнайте примерную цену. Авторские торты Blush-Berry.">
+  <meta name="theme-color" content="#F7E1DD">
+  <link rel="preload" href="fonts/cormorant-garamond-600-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="icon-plane" viewBox="0 0 24 24">
+      <path d="M21.2 3.4 2.9 10.5c-.8.3-.8 1.4 0 1.7l4.6 1.6 1.7 5.4c.2.7 1.1.9 1.6.4l2.5-2.4 4.6 3.4c.6.4 1.4.1 1.6-.6l3.1-15.2c.2-.9-.6-1.6-1.4-1.4Zm-3.4 4-8 7.2-.3 3-1.2-3.9 9.5-6.3Z" fill="currentColor"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="site-header__brand" href="#top">Blush-Berry</a>
+      <a class="btn btn--secondary" href="#" data-telegram="greeting" aria-label="Написать в Telegram">
+        <svg class="btn__icon" aria-hidden="true"><use href="#icon-plane"/></svg>
+        <span class="btn__label-long">Написать в Telegram</span>
+        <span class="btn__label-short">Написать</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- P01-S01 · Первый экран -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <!-- ⚠ Черновой пример тона; окончательный текст утверждает владелец -->
+          <h1 class="hero__title" id="hero-title">Торты, которые собирают по&nbsp;слоям — и&nbsp;по&nbsp;вашему вкусу</h1>
+          <p class="hero__lead">Соберите свой торт и сразу узнайте примерную цену.</p>
+          <a class="btn btn--primary hero__action" href="#calculator">Собрать торт</a>
+        </div>
+
+        <!-- ⚠ Пример из ФОТО/др торт.png — не работа Blush-Berry; к запуску заменить своим тортом -->
+        <figure class="hero__media">
+          <img class="hero__image" src="img/hero-cake-example.webp" width="900" height="1342"
+               alt="Розовый торт с кремовыми узорами, малиной и свечами на белой подставке">
+          <figcaption class="hero__tag tag-example">пример</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <div class="sticky-cta">
+    <a class="btn btn--primary" href="#calculator">Собрать торт</a>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/telegram.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
